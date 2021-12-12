@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Магазин</title>
+    <script
+      src="https://kit.fontawesome.com/d9b88c1317.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <div id="app">
+    <body>
+      <header class="header">
+        <div class="header__blockHeader center">
+          <div class="header__logo">
+            <h1>My Shop <i class="fas fa-tag"></i></h1>
+          </div>
+          <search @click="filter"></search>
+          <button
+            class="header__cart-button cart-button"
+            type="button"
+            v-on:click="showBasket"
+          >
+            <i class="fas fa-shopping-cart"></i>Корзина
+          </button>
+
+          <div class="header__basket_card" v-if="basketVision">
+            <basket v-if="basketVision" @close="closeBasket"></basket>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div></div>
+        <div v-if="!!filteredGoods.length" class="goods-list center">
+          <goods-item v-for="item in filteredGoods" v-bind:item="item">
+          </goods-item>
+        </div>
+        <div class="loading" v-else></div>
+      </main>
+    </body>
+  </div>
+</html>
