@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
+.header {
+  background-color: rgb(152, 199, 189);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  &__blockHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__logo {
+    color: #fff;
+  }
+  &__cart-button {
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    background-color: cadetblue;
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.5s;
+    position: relative;
+    i {
+      margin-right: 10px;
+    }
+    &:hover {
+      background: #fff;
+      color: black;
+    }
+  }
+  &__search {
+    &_input {
+      padding: 5px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+    #search {
+      background-color: cadetblue;
+      color: #fff;
+      margin-left: 10px;
+      padding: 5px;
+      border-radius: 20px;
+      border: none;
+    }
+  }
+  &__basket_card {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    box-sizing: border-box;
+    right: 0;
+    top: 10%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    width: 300px;
+    .fa-times {
+      float: right;
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+    h4 {
+      text-align: center;
+      font-size: 25px;
+      color: cadetblue;
+      padding-top: 10px;
+    }
+  }
+}
+
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .goods-item {
+    border-radius: 10px;
+    width: 20%;
+    padding: 10px;
+    background: rgb(176, 209, 202);
+    text-align: center;
+    p {
+      font-size: 24px;
+      color: rgb(211, 96, 96);
+    }
+    img {
+      width: 100%;
+    }
+    button {
+      border: none;
+      padding: 10px;
+      border-radius: 20px;
+      transition: all 0.5s;
+    }
+    button:hover {
+      background: rgb(94, 93, 93);
+      color: #fff;
+    }
+  }
+}
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  display: inline-block;
+  border: 10px solid rgba(15, 226, 191, 0.1);
+  border-left-color: cadetblue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: 45%;
+  margin-top: 20%;
+  animation: donut-spin 1.2s linear infinite;
+}
+
+.basketItem {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  align-items: center;
+  img {
+    height: 100px;
+  }
+  .fa-trash-alt {
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+    padding: 5px;
+    color: cadetblue;
+  }
+}
